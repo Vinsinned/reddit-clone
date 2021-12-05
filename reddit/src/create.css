@@ -1,7 +1,32 @@
+#createBar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    width: 734px;
+    background-color: white;
+    margin: auto;
+    border-radius: 5px;
+    margin-bottom: 18px;
+}
 #createImage {
-  width: 38px;
-  border-radius: 9999px;
+    width: 38px;
+    border: 3px solid #edeff1;
+    border-radius: 9999px;
 }
 #createInput {
-    
+    width: 80%;
+    height: 70%;
+    background-color: #F6F7F8;
+    border: 1px solid #edeff1;
+    border-radius: 5px;
+    padding-left: 15px;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    font-size: 14px;
+}
+#insertImage {
+    font-size: 30px;
+}
+#link {
+    font-size: 30px;
 }
