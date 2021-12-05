@@ -1,6 +1,8 @@
 import './index.css';
-import './posts.css'
+import './posts.css';
+import './create.css';
 import Posts from './Components/Posts';
+import Create from './Components/Create';
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
           <span className="material-icons"> expand_more </span>
         </div>
       </div>
+      <Create />
       <Posts />
     </div>
   );

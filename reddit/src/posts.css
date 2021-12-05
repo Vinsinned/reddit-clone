@@ -1,17 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 #post {
     background-color: white;
     border: 1px solid #ccc;
     width: 734px;
     margin: auto;
-    padding: 10px 12px;
-    margin-bottom: 16px;
+    /*padding: 10px 12px;*/
+    margin-bottom: 20px;
     border-radius: 5px;
+    display: flex;
 }
 #vote {
+    background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 8px 4px 8px 4px;
+    border-radius: 5px;
+}
+#upvoteCount {
+    font-weight: bold;
+    font-size: 14px;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+#postHeader {
+    font-size: 12px;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 5px 5px; 
+    color: #787c7e;
+}
+#postContent {
+    padding: 6px 9px 8px 10px;
+}
+#postTitle {
+    font-weight: 600;
+    font-size: 18px;
+    /*color: #9B9B9B;*/
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+#postPara {
+    font-weight: lighter;
+    font-size: 14px;
+    font-family: 'Noto Sans', Arial, sans-serif;
+}
+#footer {
+    display: flex;
+    align-items: center;
+    color: #787c7e;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 #subredditImage {
     width: 20px;
+}
+#subredditName {
+    font-weight: 700;
+    color: black;
+    margin-right: 4px;
+}
+#comment {
+    transform: scaleX(-1);
+}
+.voteButton {
+    color: #a3a6a8;
+}
+.footerIcon {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
 }
