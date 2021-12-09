@@ -2,12 +2,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50px;
-    width: 734px;
+    height: 55px;
+    width: 95%;
     background-color: white;
     margin: auto;
     border-radius: 5px;
     margin-bottom: 18px;
+    border: 1px solid #ccc;
+}
+#createBar *:not(input) {
+    cursor: pointer;
 }
 #createImage {
     width: 38px;
@@ -15,7 +19,7 @@
     border-radius: 9999px;
 }
 #createInput {
-    width: 80%;
+    width: 75%;
     height: 70%;
     background-color: #F6F7F8;
     border: 1px solid #edeff1;

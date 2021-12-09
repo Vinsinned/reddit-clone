@@ -1,8 +1,10 @@
 import './index.css';
 import './posts.css';
 import './create.css';
+import './filter.css';
 import Posts from './Components/Posts';
 import Create from './Components/Create';
+import Filter from './Components/Filter';
 
 function App() {
   return (
@@ -12,7 +14,7 @@ function App() {
       <div id="navbar">
         <img id="logo" alt="Reddit Logo" src="https://i.redd.it/0p60dpb0vr251.jpg" />
         <div id="home">
-          <span className="material-icons"> home </span>
+          <span className="material-icons" id="homeIcon"> home </span>
           <span className="material-icons"> expand_more </span>
         </div>
         <div id="search">
@@ -29,6 +31,7 @@ function App() {
         </div>
       </div>
       <Create />
+      <Filter />
       <Posts />
     </div>
   );

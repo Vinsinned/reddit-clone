@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+*:not(input) {
+  cursor: pointer;
+}
 body {
   background-color: #d7d7d7;
 }
@@ -69,6 +72,9 @@ body {
 }
 #cardIcon {
   padding-right: 5px;
+}
+#homeIcon {
+  font-size: 28px;
 }
 .material-icons {
   font-size: 20px;

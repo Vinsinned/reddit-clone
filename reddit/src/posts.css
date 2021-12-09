@@ -3,7 +3,7 @@
 #post {
     background-color: white;
     border: 1px solid #ccc;
-    width: 734px;
+    width: 95%;
     margin: auto;
     /*padding: 10px 12px;*/
     margin-bottom: 20px;
@@ -61,6 +61,7 @@
     font-weight: 700;
     color: black;
     margin-right: 4px;
+    padding-left: 4px;
 }
 #comment {
     transform: scaleX(-1);
