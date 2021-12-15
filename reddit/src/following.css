@@ -1,0 +1,13 @@
+.userInfo {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  padding: 8px 24px;
+}
+.userImage {
+  margin-right: 8px;
+  width: 20px;
+}
+.userProfile {
+  display: flex;	
+}
