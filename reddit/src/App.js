@@ -42,7 +42,7 @@ function App() {
   const home = async () => {
     const homeContainer = document.querySelector('#homeContainer');
     const homeDropdown = document.querySelector('#homeDropdown');
-    homeContainer.classList.toggle('clicked')
+    //homeContainer.classList.toggle('clicked')
     homeContainer.style.cssText = `border: 1px solid #edeff1; border-bottom-left-radius: 0px;
       border-bottom-right-radius: 0px;`;
     homeDropdown.style.cssText = `border: 1px solid #edeff1; border-top: none; border-top-left-radius: 0px;`;
@@ -56,29 +56,49 @@ function App() {
     });
     setCommunities(subreddits);
     setFollowing(users);
+    dropdownClick();
   }
-  const checkHomeHover = () => {
+  const hoverIn = () => {
     const homeContainer = document.querySelector('#homeContainer');
-    if (homeContainer.classList.contains('clicked')) {
-      console.log('no effects');
+    if (homeContainer.classList.contains('clicked') === false) {
+      homeContainer.style.cssText = 'border: 1px solid #d7d7d7; border-radius: 5px;';
+    }
+  }
+  const hoverOut = () => {
+    const homeContainer = document.querySelector('#homeContainer');
+    if (homeContainer.classList.contains('clicked') === false) {
+      homeContainer.style.cssText = 'border: 1px solid transparent; border-radius: 5px;'
     }
   }
   const homeFilterClick = async () => {
     const homeFilter = document.querySelector('#homeFilter');
     homeFilter.style.cssText = 'background-color: white; border: 1px solid #0079d3;';
   };
+  const dropdownClick = () => {
+    const homeContainer = document.querySelector('#homeContainer');
+    const homeDropdown = document.querySelector('#homeDropdown');
+    if (homeContainer.classList.contains('clicked') === false) {
+      homeContainer.classList.add('clicked');
+      homeDropdown.classList.remove('hide');
+      homeContainer.style.cssText = 'border: 1px solid #edeff1; border-bottom-left-radius: 0; border-bottom-right-radius: 0'
+    } else {
+      homeContainer.classList.remove('clicked');
+      homeDropdown.classList.add('hide');
+      homeContainer.style.cssText = 'border: 1px solid transparent; border-radius: 5px'
+    }
+  }
   return (
     <div>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"/>
       <div id="navbar">
         <img id="logo" alt="Reddit Logo" src="https://i.redd.it/0p60dpb0vr251.jpg" />
-        <div id="homeContainer" onMouseOver={checkHomeHover} className="dropdown">
-          <div id="home" onClick={home}>
+        <div id="homeContainer" className="dropdown">
+          <div id="home" onClick={home} onMouseOver={hoverIn} onMouseOut={hoverOut}>
             <span className="material-icons" id="homeIcon"> home </span>
             <span className="material-icons"> expand_more </span>
           </div>
-          <div id="homeDropdown">
+          <div id="homeDropdown" className="hide">
             <input type="text" placeholder="Filter" id="homeFilter" onClick={homeFilterClick}></input>
             <p className="homeCommunities">My Communities</p>
             <div id="createCommunity">

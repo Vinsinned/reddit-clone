@@ -4,11 +4,10 @@ function Following(props) {
   const { following } = props;
 	let users = [];
 	if (following !== undefined) {
-		console.log('yes');
 		for (const user of following) {
 			users.push(
-				<div className="userInfo">
-					<div className="userProfile" key={user[0]}>
+				<div className="userInfo" key={user[0]}>
+					<div className="userProfile">
 						<img className="userImage" alt="user Icon" src={user[1]} />
 						<p className="userName">u/{user[0]}</p>
 					</div>
