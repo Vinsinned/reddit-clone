@@ -3,6 +3,9 @@ import './posts.css';
 import './create.css';
 import './filter.css';
 import './following.css';
+import './user.css';
+import './toggle.css';
+import './post.csss'
 import Posts from './Components/Posts';
 import Create from './Components/Create';
 import Filter from './Components/Filter';
@@ -10,6 +13,7 @@ import Subreddits from './Components/Subreddits';
 import Following from './Components/Following';
 import Feeds from './Components/Feeds';
 import Other from './Components/Other';
+import User from './Components/User';
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, doc, setDoc } from "firebase/firestore";
 import React, {setState, useState, useEffect, useDebugValue} from 'react';
@@ -122,10 +126,7 @@ function App() {
         <span className="material-icons homeButtons"> notifications </span>
         <span className="material-icons homeButtons"> add </span>
         <button type="button" id="coinShop"><span className="material-icons" id="cardIcon"> credit_card </span>Free</button>
-        <div id="user">
-          <img alt="profile" src="https://i.pinimg.com/474x/65/25/a0/6525a08f1df98a2e3a545fe2ace4be47.jpg" id="userPic" />
-          <span className="material-icons"> expand_more </span>
-        </div>
+        <User />
       </div>
       <Create />
       <Filter />

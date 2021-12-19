@@ -1,0 +1,110 @@
+#user {
+  border: 1px solid transparent;
+  display: relative;
+  display: inline-block;
+  align-items: center;
+  border: 1px solid transparent;
+  width: 8%;
+  height: 24px;
+  padding: 4px;
+  padding-left: 8px;
+  border-radius: 5px;
+}
+#userContainer {
+  display: flex;
+  justify-content: space-between;
+}
+#userPic {
+  width: 24px;
+  border-radius: 5px;
+}
+#userDropdown {
+  position: absolute;
+  margin-left: -1px;
+  background-color: white;
+  min-width: 20vw;
+  max-height: 70%;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+	left: 76vw;
+  z-index: 11;
+  overflow-y: scroll;
+  border: 1px solid #edeff1;
+  border-top-color: transparent;
+}
+#userDropdown::-webkit-scrollbar {
+  display: none;
+}
+#divider {
+  /*
+  border: 1px solid #edeff1;
+  width: 70%;
+  margin-left: 15%;
+  */
+}
+#oldRedditContainer {
+  border-bottom: 1px solid #edeff1;
+  width: 70%;
+  display: block;
+  margin: auto;
+}
+#oldReddit {
+  display: flex;
+  align-items: center;
+  margin-left: -15px;
+}
+#coinsAmount {
+  font-size: 11px;
+  font-weight: 100;
+  line-height: 16px;
+  color: #7c7c7c;
+}
+#nightMode {
+  width: 50%;
+}
+#onPara {
+  width: 70%; 
+}
+#logout {
+  margin-left: 2px;
+}
+#logoutOption {
+  padding: 10px 16px 10px 12px;
+  display: flex;
+  align-items: center;
+}
+#logoutOption:hover {
+  background-color: #2196F3;
+  color: white;
+}
+.userSection {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 12px;
+  text-transform: uppercase;
+  color: #878a8c;
+  margin: 8px 0px 4px 12px;
+}
+.userOption:hover {
+  background-color: #2196F3;
+  color: white;
+}
+.userOption {
+  margin: 4px 0px;
+  padding: 10px 16px 10px 12px;
+  display: flex;
+  align-items: center;
+}
+.userPara {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.userIcon {
+  font-size: 20px;
+  margin-right: 8px;
+}
