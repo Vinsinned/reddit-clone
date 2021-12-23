@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+#upvote:hover {
+  color: #cc3700;
+}
+#downvote:hover {
+	color: #5a75cc;
+}
+#postTitle {
+	padding-bottom: 5px;
+	font-weight: 500;
+	font-size: 18px;
+	font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+#postPara {
+	font-size: 14.5px;
+	font-family: 'Noto Sans', Arial, sans-serif;
+	padding: 8px 0px 10px 0px;
+	border: 0;
+	vertical-align: baseline;
+}
+.footerIcon {
+	margin-right: 4px;
+}
+#moreIcon {
+	padding: 0px 4px;
+	border-radius: 3px;
+}
+#moreIcon:hover {
+	background-color:  #1a1a1b1a;
+}
+#headerInfo {
+	display: flex;
+}
+#content {
+	padding-left: 8px;
+}
+.footerOption {
+	display: flex;
+	align-items: center;
+	border-radius: 3px;
+	height: 20px;
+	padding: 8px;
+}
+.footerOption:hover {
+	background-color: #1a1a1b1a;
+}
+.headerHover:hover {
+	text-decoration: underline;
+}

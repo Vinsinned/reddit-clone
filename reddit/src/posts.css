@@ -6,11 +6,17 @@
     width: 95%;
     margin: auto;
     /*padding: 10px 12px;*/
-    margin-bottom: 20px;
     border-radius: 5px;
     display: flex;
+    padding-top: 9px;
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+#post:hover {
+    border: 1px solid #898989;
 }
 #vote {
+    text-align: center;
     background-color: #f8f9fa;
     display: flex;
     flex-direction: column;
@@ -19,8 +25,9 @@
     border-radius: 5px;
 }
 #upvoteCount {
-    font-weight: bold;
-    font-size: 14px;
+    font-weight: 600;
+    width: 30px;
+    font-size: 12px;
     font-family: 'IBM Plex Sans', Arial, sans-serif;
 }
 #postHeader {
@@ -28,21 +35,11 @@
     font-family: 'IBM Plex Sans', Arial, sans-serif;
     display: flex;
     align-items: center;
-    padding: 5px 5px; 
+    padding-bottom: 8px;
     color: #787c7e;
-}
-#postContent {
-    padding: 6px 9px 8px 10px;
-}
-#postTitle {
-    font-weight: 600;
-    font-size: 18px;
-    /*color: #9B9B9B;*/
-    font-family: 'IBM Plex Sans', Arial, sans-serif;
 }
 #postPara {
     font-weight: lighter;
-    font-size: 14px;
     font-family: 'Noto Sans', Arial, sans-serif;
 }
 #footer {
@@ -52,25 +49,18 @@
     font-family: 'IBM Plex Sans', Arial, sans-serif;
     font-size: 12px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
-#subredditImage {
+.subredditImage {
     width: 20px;
 }
 #subredditName {
     font-weight: 700;
     color: black;
     margin-right: 4px;
-    padding-left: 4px;
 }
 #comment {
     transform: scaleX(-1);
 }
 .voteButton {
     color: #a3a6a8;
-}
-.footerIcon {
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 20px;
 }

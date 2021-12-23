@@ -5,7 +5,8 @@ import './filter.css';
 import './following.css';
 import './user.css';
 import './toggle.css';
-import './post.csss'
+import './post.css';
+import './postCreator.css'
 import Posts from './Components/Posts';
 import Create from './Components/Create';
 import Filter from './Components/Filter';
@@ -15,7 +16,7 @@ import Feeds from './Components/Feeds';
 import Other from './Components/Other';
 import User from './Components/User';
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, setDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, doc, setDoc, documentId, addDoc } from "firebase/firestore";
 import React, {setState, useState, useEffect, useDebugValue} from 'react';
 //use setstat
 const firebaseConfig = {
@@ -35,9 +36,10 @@ document.addEventListener('click', (e) => {
     const homeFilter = document.querySelector('#homeFilter');
     homeFilter.style.cssText = 'border: 1px solid #edeff1; background-color: #F6F7F8;'
   }
-})
+});
 
 function App() {
+  const [posts, setPosts] = useState();
   let subreddits = [];
   let users = [];
   //Make this so I don't need to use arrya
@@ -91,6 +93,15 @@ function App() {
       homeContainer.style.cssText = 'border: 1px solid transparent; border-radius: 5px'
     }
   }
+  const prePosts = [];
+  const [filteredPosts, setFilteredPosts] = useState();
+  const initialPosts = async () => {
+    const querySnapshot = await getDocs(collection(db, "Posts"));
+		querySnapshot.forEach((doc) => {
+			prePosts.push(doc.data()['SubredditName'])
+		});
+		setFilteredPosts(prePosts);
+	}
   return (
     <div>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -130,9 +141,60 @@ function App() {
       </div>
       <Create />
       <Filter />
-      <Posts />
+      <Posts posts={filteredPosts} />
     </div>
   );
 }
 
 export default App;
+  /*
+  const register = async (e) => {
+    e.preventDefault();
+    const image = document.querySelector('#subredditImage');
+    const name = document.querySelector('#subredditName');
+    const time = document.querySelector('#time');
+    const header = document.querySelector('#header');
+    const content = document.querySelector('#content');
+    const upvotes = document.querySelector('#upvotes');
+    const comments = document.querySelector('#comments');
+    const username = document.querySelector('#username');
+    try {
+      const docRef = await addDoc(collection(db, "Posts"), {
+        SubredditImage: `${image.value}`,
+        SubredditName: `${name.value}`,
+        Time: `${time.value}`,
+        Header: `${header.value}`,
+        Content: `${content.value}`,
+        Upvotes: `${upvotes.value}`,
+        Comments: `${comments.value}`,
+        username: `${username.value}`
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+  return (
+    <div id="postCreator">
+      <form>
+        <label htmlFor="subredditImage">Subreddit Image</label>
+        <input type="text" id="subredditImage" name="subredditImage" />
+        <label htmlFor="subredditName">Subreddit Name</label>
+        <input type="text" id="subredditName" name="subredditName" />
+        <label htmlFor="time">Time from creation</label>
+        <input type="text" id="time" name="time" />
+        <label htmlFor="header">Header</label>
+        <input type="text" id="header" name="header" />
+        <label htmlFor="content">Content</label>
+        <input type="text" id="content" name="content" />
+        <label htmlFor="upvotes">Upvotes</label>
+        <input type="text" id="upvotes" name="upvotes" />
+        <label htmlFor="comments">comments</label>
+        <input type="text" id="comments" name="comments" />
+        <label htmlFor="username">username</label>
+        <input type="text" id="username" name="username" />
+        <button id="submitButton" onClick={register}>SUBMIT YES!</button>
+      </form>
+    </div>
+  )
+  */
