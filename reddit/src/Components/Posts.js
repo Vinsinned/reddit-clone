@@ -56,7 +56,7 @@ const initialPosts = [
 	},
 	{
 		Comments: "13.2k",
-		Content: "TIMES SQUARE IS GME?!?!",
+		Content: "movie",
 		Header: "Times Square right now.",
 		SubredditImage: "https://styles.redditmedia.com/t5_2th52/styles/communityIcon_4ftjv0810z181.png?width=256&s=093501ffeabbc646534e201184d00bb258cd6ecd",
 		SubredditName: "wallstreetbets",
@@ -87,6 +87,16 @@ const initialPosts = [
 ];
 const displayPosts = [];
 for (const posts of initialPosts) {
+	const postPara = [];
+	//idk how this works
+	if (posts['Content'].indexOf('http')) {
+		postPara.push(<p id="postPara">{posts['Content']}</p>)
+	} else {
+		postPara.push(
+			<div id="contentContainer">
+				<img alt="content" className="contentImage" src={posts['Content']} />
+			</div>)
+	}
 	displayPosts.push(
 		<div id="post">
 			<div id="vote">
@@ -102,7 +112,7 @@ for (const posts of initialPosts) {
 				</div>
 				<div id="postContent">
 					<h3 id="postTitle">{posts['Header']}</h3>
-					<p id="postPara">{posts['Content']}</p>
+					{postPara}
 				</div>
 				<div id="footer">
 					<div className="footerOption">

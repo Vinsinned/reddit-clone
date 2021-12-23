@@ -35,6 +35,9 @@
 #content {
 	padding-left: 8px;
 }
+#contentContainer {
+	text-align: center;
+}
 .footerOption {
 	display: flex;
 	align-items: center;
@@ -47,4 +50,10 @@
 }
 .headerHover:hover {
 	text-decoration: underline;
+}
+.contentImage {
+	width: 90%;
+	height: 90%;
+	padding-top: 10px;
+	padding-bottom: 8px;
 }
