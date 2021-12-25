@@ -128,7 +128,7 @@ for (const posts of initialPosts) {
 						<p>Share</p>
 					</div>
 					<div id="moreIcon">
-						<span className="material-icons footerIcon"> more_horiz </span>
+						<span className="material-icons"> more_horiz </span>
 					</div>
 				</div>
 			</div>

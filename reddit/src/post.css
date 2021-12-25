@@ -23,7 +23,8 @@
 	margin-right: 4px;
 }
 #moreIcon {
-	padding: 0px 4px;
+	padding-left: 4px;
+	padding-right: 4px;
 	border-radius: 3px;
 }
 #moreIcon:hover {

@@ -1,0 +1,87 @@
+.dark body {
+    background-color: #030303;
+}
+.dark #navbar {
+    color: #d7dadc;
+    background-color: #1a1a1b;
+    border-bottom: 1px solid #343536;
+}
+.dark #logo {
+    border-radius: 9999px;
+}
+.dark #post {
+    background-color: #1a1a1b;
+    border: 1px solid #343536;
+}
+.dark #post:hover {
+    border: 1px solid #818384;
+}
+.dark #vote {
+    color: white;
+    background-color: #141415;
+}
+.dark #postContent {
+    color: white;
+}
+.dark #subredditName {
+    color: white;
+}
+.dark .footerOption:hover {
+    background-color: #d7dadc1a;
+}
+.dark #moreIcon:hover  {
+    background-color: #d7dadc1a;
+}
+.dark #searchContainer {
+    background-color: #272729;
+    border: 1px solid #343536;
+}
+.dark #search {
+    border: none;
+    background-color: #272729;
+}
+.dark #createBar {
+    background-color: #1a1a1b;
+    border: 1px solid #343536;
+}
+.dark #createImage {
+    border: 2px solid #818384;
+}
+.dark #createInput {
+    background-color: #272729;
+    border: 1px solid #343536;
+}
+.dark .createIcon {
+    color: #D7DaDC;
+}
+.dark #filterBar {
+    color: #818384;
+    border: 1px solid #343536;
+    background-color: #1a1a1b;
+}
+.dark .filters:hover {
+    background-color: #29292b;
+}
+.dark .current {
+    color: #d7dadc;
+    background-color: #727475;
+}
+.dark .current:hover {
+    background-color: #7a7c7e;
+}
+.dark #homeDropdown {
+    background-color: #1a1a1b;
+    border: 1px solid #343536;
+    border-top: none;
+}
+.dark #home {
+    border: 1px solid #343536;
+}
+.dark #userDropdown {
+    background-color: #1a1a1b;
+    border: 1px solid #343536;
+    border-top: none;
+}
+.dark #user {
+    border: 1px solid #343536;
+}

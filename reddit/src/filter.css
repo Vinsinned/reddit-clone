@@ -16,29 +16,47 @@
 }
 #filtersContainer {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: 50%;
 }
 #viewOptions {
     position: absolute;
     display: flex;
-    justify-content: space-around;
-    left: 88%;
+    justify-content: space-between;
+    left: 87%;
+    padding: 6px 8px 6px 8px;
+}
+#viewOptions:hover {
+    background-color: #edeff1;
+    border-radius: 20px;
+}
+#bestContainer {
+    margin-left: 10px;
+}
+#filterMore {
+    margin: auto;
+    padding: 4px;
+}
+#filterMore:hover {
+    background-color: #edeff1;
+    border-radius: 20px;
 }
 .filters {
-    padding: 5px 10px 5px 10px;
+    border: 1px solid transparent;
+    padding: 4px 12px 6px 7px;
 }
 .filters:hover {
     background-color: #edeff1;
-    border-radius: 9999px;
+    border-radius: 20px;
 }
 .current {
     color: #0079d3;
     background-color: #f6f7f8;
-    border-radius: 9999px;
+    border-radius: 20px;
 }
 .filters {
     display: flex;
     align-items: center;
+}
+.filterIcon {
+    margin-right: 6px;
 }

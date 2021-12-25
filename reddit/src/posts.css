@@ -8,7 +8,6 @@
     /*padding: 10px 12px;*/
     border-radius: 5px;
     display: flex;
-    padding-top: 9px;
     padding-bottom: 3px;
     margin-bottom: 10px;
 }
@@ -31,6 +30,7 @@
     font-family: 'IBM Plex Sans', Arial, sans-serif;
 }
 #postHeader {
+    padding-top: 9px;
     font-size: 12px;
     font-family: 'IBM Plex Sans', Arial, sans-serif;
     display: flex;

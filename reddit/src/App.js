@@ -6,7 +6,8 @@ import './following.css';
 import './user.css';
 import './toggle.css';
 import './post.css';
-import './postCreator.css'
+import './postCreator.css';
+import './nightMode.css';
 import Posts from './Components/Posts';
 import Create from './Components/Create';
 import Filter from './Components/Filter';
@@ -34,7 +35,11 @@ const db = getFirestore();
 document.addEventListener('click', (e) => {
   if (e.target !== document.querySelector('#homeFilter')) {
     const homeFilter = document.querySelector('#homeFilter');
-    homeFilter.style.cssText = 'border: 1px solid #edeff1; background-color: #F6F7F8;'
+    if (document.documentElement.classList.contains('dark')) {
+      homeFilter.style.cssText = 'background-color: #272729; border: 1px solid #343536;';
+    } else {
+      homeFilter.style.cssText = 'border: 1px solid #edeff1; background-color: #F6F7F8;';
+    }
   }
 });
 
@@ -46,12 +51,21 @@ function App() {
   const [communities, setCommunities] = useState();
   const [following, setFollowing] = useState();
   const home = async () => {
-    const homeContainer = document.querySelector('#homeContainer');
+    const homeContainer = document.querySelector('#home');
     const homeDropdown = document.querySelector('#homeDropdown');
-    //homeContainer.classList.toggle('clicked')
-    homeContainer.style.cssText = `border: 1px solid #edeff1; border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;`;
-    homeDropdown.style.cssText = `border: 1px solid #edeff1; border-top: none; border-top-left-radius: 0px;`;
+    //homeContainer.classList.toggle('clicked');
+    if (document.documentElement.classList.contains('dark')) {
+      console.log('YES!')
+      homeContainer.style.cssText = `border: 1px solid #343536; border-top-left-radius: 5px;
+      border-top-right-radius: 5px; border-bottom: none`;
+      homeDropdown.style.cssText = `border: 1px solid #343536; border-top: none; border-top-left-radius: 
+      0px; border-top: none; margin-left: 0px;`;
+    } else {
+      homeContainer.style.cssText = `border: 1px solid #edeff1; border-top-left-radius: 5px;
+      border-top-right-radius: 5px; border-bottom: none`;
+      homeDropdown.style.cssText = `border: 1px solid #edeff1; border-top: none; border-top-left-radius: 0px;
+      margin-left: 0px`;
+    }
     const querySnapshot1 = await getDocs(collection(db, "communities"));
     querySnapshot1.forEach((doc) => {
       subreddits.push([doc.data()['subredditName'], doc.data()['subredditImage']]);
@@ -65,32 +79,54 @@ function App() {
     dropdownClick();
   }
   const hoverIn = () => {
-    const homeContainer = document.querySelector('#homeContainer');
+    const homeContainer = document.querySelector('#home');
     if (homeContainer.classList.contains('clicked') === false) {
-      homeContainer.style.cssText = 'border: 1px solid #d7d7d7; border-radius: 5px;';
+      if (document.documentElement.classList.contains('dark')) {
+        homeContainer.style.cssText = 'border: 1px solid #343536; border-radius: 5px;';
+      } else {
+        homeContainer.style.cssText = 'border: 1px solid #d7d7d7; border-radius: 5px;';
+      }
     }
   }
   const hoverOut = () => {
-    const homeContainer = document.querySelector('#homeContainer');
+    const homeContainer = document.querySelector('#home');
     if (homeContainer.classList.contains('clicked') === false) {
-      homeContainer.style.cssText = 'border: 1px solid transparent; border-radius: 5px;'
+      homeContainer.style.cssText = 'border: 1px solid transparent; border-radius: 5px;';
     }
   }
   const homeFilterClick = async () => {
     const homeFilter = document.querySelector('#homeFilter');
-    homeFilter.style.cssText = 'background-color: white; border: 1px solid #0079d3;';
+    if (document.documentElement.classList.contains('dark')) {
+      homeFilter.style.cssText = 'background-color: #272729; border: 1px solid #343536; color: #d7dadc';
+    } else {
+      homeFilter.style.cssText = 'background-color: white; border: 1px solid #0079d3;';
+    }
   };
+  const filterIn = () => {
+    const homeFilter = document.querySelector('#homeFilter');
+    if (document.documentElement.classList.contains('dark')) {
+      homeFilter.style.cssText = 'background-color: #272729; border: 1px solid #d7dadc;';
+    } else {
+      homeFilter.style.cssText = 'background - color: white; border: 1px solid #0079d3;';
+    }
+  }
+  const filterOut = () => {
+    const homeFilter = document.querySelector('#homeFilter');
+    if (document.documentElement.classList.contains('dark')) {
+      homeFilter.style.cssText = 'background-color: #272729; border: 1px solid #343536;';
+    } else {
+      homeFilter.style.cssText = 'border: 1px solid #edeff1; background-color: #F6F7F8; ';
+    }
+  }
   const dropdownClick = () => {
-    const homeContainer = document.querySelector('#homeContainer');
+    const homeContainer = document.querySelector('#home');
     const homeDropdown = document.querySelector('#homeDropdown');
     if (homeContainer.classList.contains('clicked') === false) {
       homeContainer.classList.add('clicked');
       homeDropdown.classList.remove('hide');
-      homeContainer.style.cssText = 'border: 1px solid #edeff1; border-bottom-left-radius: 0; border-bottom-right-radius: 0'
     } else {
       homeContainer.classList.remove('clicked');
       homeDropdown.classList.add('hide');
-      homeContainer.style.cssText = 'border: 1px solid transparent; border-radius: 5px'
     }
   }
   const prePosts = [];
@@ -114,7 +150,7 @@ function App() {
             <span className="material-icons"> expand_more </span>
           </div>
           <div id="homeDropdown" className="hide">
-            <input type="text" placeholder="Filter" id="homeFilter" onClick={homeFilterClick}></input>
+            <input type="text" placeholder="Filter" id="homeFilter" onClick={homeFilterClick} onMouseOver={filterIn} onMouseOut={filterOut} ></input>
             <p className="homeCommunities">My Communities</p>
             <div id="createCommunity">
               <span className="material-icons" id="homeCreate">add</span>
@@ -129,7 +165,7 @@ function App() {
             <Other />
           </div>
         </div>
-        <div id="search">
+        <div id="searchContainer">
           <span className="material-icons" id="searchIcon"> search </span>
           <input type="text" id="search" placeholder="Search Unreddit"/>
         </div>

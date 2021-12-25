@@ -61,10 +61,10 @@
   color: #7c7c7c;
 }
 #nightMode {
-  width: 50%;
+  width: 70%;
 }
 #onPara {
-  width: 70%; 
+  width: 80%; 
 }
 #logout {
   margin-left: 2px;
@@ -77,6 +77,12 @@
 #logoutOption:hover {
   background-color: #2196F3;
   color: white;
+}
+#darkMode {
+  margin: 4px 0px;
+  padding: 10px 16px 10px 12px;
+  display: flex;
+  align-items: center;
 }
 .userSection {
   font-size: 10px;

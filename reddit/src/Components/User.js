@@ -2,12 +2,16 @@ import { doc, documentId } from '@firebase/firestore';
 import React from 'react';
 import ToggleButton from './ToggleButton';
 
-function User() {
+function User(props) {
 	const click = () => {
 		const user = document.querySelector('#user');
 		const userDropdown = document.querySelector('#userDropdown');
 		if (user.classList.contains('clicked') === false) {
-			user.style.cssText = 'border: 1px solid #edeff1';
+			if (document.documentElement.classList.contains('dark')) {
+				user.style.cssText = 'border: 1px solid #343536';
+			} else {
+				user.style.cssText = 'border: 1px solid #edeff1';
+			}
 			user.classList.add('clicked');
 		} else {
 			user.style.cssText = 'border: 1px solid transparent';
@@ -52,6 +56,38 @@ function User() {
   		align-items: center;
   		margin-left: -15px;`;
 	}
+	const nightMode = () => {
+		const filter = document.querySelector('#homeFilter');
+		const dropdown = document.querySelector('#homeDropdown');
+		const user = document.querySelector('#user');
+		const home = document.querySelector('#home');
+		const toggleButton = document.querySelector('#toggleButton');
+		toggleButton.checked = true;
+		//check if dropdown has hide
+		if (document.documentElement.classList.contains('dark') === false) {
+			document.documentElement.classList.add('dark');
+			if (dropdown.classList.contains('hide') === false) {
+				dropdown.style.cssText = `border: 1px solid #343536; border-top: none; border-top-left-radius: 
+      			0px; border-top: none; margin-left: 0px;`;
+				home.style.cssText = `border: 1px solid #343536; border-top-left-radius: 5px;
+      			border-top-right-radius: 5px; border-bottom: none`;
+			} else {
+				user.style.cssText = 'border: 1px solid #343536';
+				home.style.cssText = 'border: 1px solid transparent;';
+			}
+		} else {
+			document.documentElement.classList.remove('dark');
+			if (dropdown.classList.contains('hide') === false) {
+				dropdown.style.cssText = `border: 1px solid #edeff1; border-top: none; border-top-left-radius: 0px;
+      			margin-left: 0px`;
+				home.style.cssText = `border: 1px solid #edeff1; border-top-left-radius: 5px;
+     			 border-top-right-radius: 5px; border-bottom: none`;
+			} else {
+				user.style.cssText = 'border: 1px solid #edeff1';
+				home.style.cssText = 'border: 1px solid transparent';
+			}
+		}
+	}
 	return <div id="user">
 		<div id="userContainer" onClick={click} onMouseOver={hoverIn} onMouseOut={hoverOut}>
 			<img alt="profile" src="https://i.pinimg.com/474x/65/25/a0/6525a08f1df98a2e3a545fe2ace4be47.jpg" id="userPic" />
@@ -77,7 +113,7 @@ function User() {
 					<p className="userPara">User Settings</p>
 			</div>
 			<p className="userSection">View Options</p>
-			<div className="userOption">
+			<div className='userOption' onClick={nightMode}>
 				<span className="material-icons userIcon">dark_mode</span>
 				<p className="userPara" id="nightMode">Night Mode</p>
 				<ToggleButton />
