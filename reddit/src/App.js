@@ -8,7 +8,6 @@ import './toggle.css';
 import './post.css';
 import './postCreator.css';
 import './nightMode.css';
-import Posts from './Components/Posts';
 import Create from './Components/Create';
 import Filter from './Components/Filter';
 import Subreddits from './Components/Subreddits';
@@ -177,7 +176,6 @@ function App() {
       </div>
       <Create />
       <Filter />
-      <Posts posts={filteredPosts} />
     </div>
   );
 }

@@ -19,7 +19,7 @@ function Subreddits(props) {
 
 	return <div>
 		{subreddits}
-  </div>
+  	</div>
 }
 
 export default Subreddits;

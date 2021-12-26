@@ -73,7 +73,7 @@ function User(props) {
       			border-top-right-radius: 5px; border-bottom: none`;
 			} else {
 				user.style.cssText = 'border: 1px solid #343536';
-				home.style.cssText = 'border: 1px solid transparent;';
+				home.style.cssText = 'border: 1px solid transparent';
 			}
 		} else {
 			document.documentElement.classList.remove('dark');
